@@ -15,25 +15,22 @@ public class AgenceController {
     private final IAgenceService agenceService;
 
     @GetMapping("/afficherToutsAgences")
-    public List<Agence> getAllAgence(){
+    public List<Agence> getAllAgences(){
         return agenceService.afficherAllAgence();
-
-
     }
+
     @PostMapping("/ajouterAgences")
-    public Agence ajouterAgence(@RequestBody Agence agence)
-    {
+    public Agence ajouterAgence(@RequestBody Agence agence) {
         return agenceService.ajouterAgence(agence);
     }
 
-
     @PutMapping("/modifierAgence")
-    public Agence modifierAgence(@RequestBody Agence agence){
+    public Agence modifierAgence(@RequestBody Agence agence) {
         return agenceService.modifierAgence(agence);
     }
 
     @PutMapping("/afficherAgence/{id}")
-    public Agence afficherAgence(@PathVariable Long id){
+    public Agence afficherAgence(@PathVariable Long id) {
         return agenceService.afficherAgenceById(id);
     }
 
@@ -42,7 +39,4 @@ public class AgenceController {
         agenceService.supprimerAgence(id);
     }
 
-
 }
-
-
